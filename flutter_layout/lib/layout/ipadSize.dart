@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
- 
+
 void main() => runApp(IpadSize());
  
 class IpadSize extends StatelessWidget {
@@ -35,7 +35,7 @@ class IpadSize extends StatelessWidget {
       ),
     );
 
-    Container tipss(int no) {
+    Widget tipss(int no) {
       var icon, text, time;
       
       if (no == 0) {
@@ -64,7 +64,6 @@ class IpadSize extends StatelessWidget {
     }
 
     final textTitle = Container(
-      // padding: EdgeInsets.all(20),
       child: Center(
         child: Text(
           'Strawberry Pavlova',
@@ -90,7 +89,6 @@ class IpadSize extends StatelessWidget {
         )
       ),
     );  
-
     final goal = Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
