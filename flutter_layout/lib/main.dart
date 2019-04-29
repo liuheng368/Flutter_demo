@@ -46,9 +46,7 @@ class ListTodo extends StatelessWidget {
                   builder: (context) => _PopPage()
                 ));
                 print('$va');
-            ),
-      )
-    );
+            }),));
   }
 }
 
