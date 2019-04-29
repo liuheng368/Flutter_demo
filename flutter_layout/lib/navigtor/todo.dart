@@ -38,35 +38,33 @@ class ListTodo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: RaisedButton(
-              child: Text('push'),
-              onPressed: () async {
-                final va = await Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => _PopPage()
-                ));
-                print('$va');
-            ),
-      )
+      body: ListView.builder(
+        itemCount: lm.length,
+        itemBuilder: (context, index) => ListTile(
+          title: Text('Todo ${lm[index].todoIndex}'),
+          subtitle: Text('${lm[index].todoDes}'),
+          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (content) => _ListTodoDetail(model: lm[index]),
+          )),
+        ),
+      ),
     );
   }
 }
 
-class _PopPage extends StatelessWidget {
+class _ListTodoDetail extends StatelessWidget {
+  final _ListTodoModel model;
+
+  const _ListTodoDetail({Key key,@required this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title:Text('pop'),
+          title:Text('${this.model.todoIndex}'),
         ),
       body: Center(
-        child: Center(
-          child: RaisedButton(
-              child: Text('pop'),
-              onPressed: () => Navigator.of(context).pop('we are coming'),
-            ),  
-        )
+        child: Text(this.model.todoDes),
       )
     );
   }
