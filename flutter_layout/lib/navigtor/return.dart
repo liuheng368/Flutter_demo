@@ -44,13 +44,13 @@ class ListTodo extends StatelessWidget {
           title: Text('Todo ${lm[index].todoIndex}'),
           subtitle: Text('${lm[index].todoDes}'),
           onTap: () async{
-            final result = await Navigator.of(context).push(MaterialPageRoute(
+            Future result = await Navigator.of(context).push(MaterialPageRoute(
               builder: (content) => _ListTodoDetail(model: lm[index]),
             ));
             Scaffold.of(context)
               ..removeCurrentSnackBar()
               ..showSnackBar(SnackBar( content: Text('$result')));
-          } 
+          }
         ),
       ),
     );

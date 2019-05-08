@@ -26,7 +26,7 @@ class NavigationPage extends StatelessWidget {
     return Container(
       child: Center(
         child: RaisedButton(
-          child: Text('login'),
+          child: Text('login in'),
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => _Navigation(),
@@ -59,7 +59,7 @@ class _Navigation extends StatelessWidget {
             WidgetBuilder _builder;
             switch (settings.name){
               case 'user/hello':
-                _builder = (context) => Hello('a');
+                _builder = (context) => Hello();
                 break;
               case 'user/logOut':
                 _builder = (context) => LogOut();
@@ -74,8 +74,6 @@ class _Navigation extends StatelessWidget {
 }
 
 class Hello extends StatelessWidget {
-  Hello(String s);
-
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +91,7 @@ class Hello extends StatelessWidget {
               RaisedButton(
                 child: Text('back'),
                 onPressed: () => {
-                  Navigator.of(context).pop()
+                  Navigator.of(context,rootNavigator: true).pop()
                 },
               ),
               RaisedButton(
@@ -134,7 +132,7 @@ class LogOut extends StatelessWidget {
               RaisedButton(
                 child: Text('log out'),
                 onPressed: () => {
-                  Navigator.of(context).pop()
+                  Navigator.of(context,rootNavigator: true).pop()
                 },
               ),
             ],
