@@ -142,16 +142,16 @@ class _boxCLess extends State<_boxC> {
   Widget build(BuildContext context) {
     return Container(
       child: GestureDetector(
-        onTapDown: (details) { 
-          print(details.globalPosition);
-          print('12313131312313');
-          setState(()=>{ _hold = true }); 
-        },
+        onTap: ()=>{widget.onTap(!widget.active)},
+        onTapDown: (details)=>{ setState(()=>{ _hold = true }) },
         onTapUp: (details)=>{ setState(()=>{ _hold = false }) },
         onTapCancel: ()=>{setState(()=>{ _hold = false }) },
         child: Container(
           alignment: Alignment.center,
-          child: Text('GestureDetector'),
+          child: Text(
+            widget.active?'Active':'Inactive',
+            style: TextStyle(fontSize: 32, color: Colors.white)
+          ),
           width: 150,
           height: 150,
           decoration: BoxDecoration(
