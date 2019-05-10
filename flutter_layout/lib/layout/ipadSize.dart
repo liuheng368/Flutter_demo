@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-void main() => runApp(IpadSize());
  
 class IpadSize extends StatelessWidget {
   @override
@@ -129,11 +127,9 @@ class IpadSize extends StatelessWidget {
     final imageView = Image.asset('assets/images/pavlova.jpg', fit: BoxFit.cover);
 
 
-    return MaterialApp(
-      title: 'IpadSize App',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
-          title: Text('IpadSize App Bar'),
+          title: Text('IpadSize'),
         ),
         body: Center(
           child: Container(
@@ -149,7 +145,6 @@ class IpadSize extends StatelessWidget {
             ),
           ),
         )
-      ),
-    );
+      );
   }
 }

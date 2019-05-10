@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
- 
-void main() => runApp(MyApp());
- 
-class MyApp extends StatelessWidget {
+  
+class OnTapBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
+    return Scaffold(
+      appBar: AppBar(
+          title: Text('OnTapBox'),
         ),
         body: Center(
           child: Column(
@@ -19,8 +15,7 @@ class MyApp extends StatelessWidget {
             _boxBParents(),
             _boxCParents(),
           ],
-          ),
-        )
+        ),
       )
     );
   }

@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
  class HoriVertSizingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'HoriVertSizingPage App',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
-          title: Text('HoriVertSizingPage App Bar'),
+          title: Text('HoriVertSizingPage'),
         ),
         body: Center(
           child: (
@@ -30,7 +28,6 @@ import 'package:flutter/material.dart';
             )
           ),
         ),
-      ),
     );
   }
 }

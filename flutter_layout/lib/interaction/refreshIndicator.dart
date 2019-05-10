@@ -1,32 +1,11 @@
 import 'package:flutter/material.dart';
- 
-void main() => runApp(MyApp());
- 
-class MyApp extends StatelessWidget {
+
+class RefreshList extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: _RefreshInd(),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _RefreshInd extends StatefulWidget {
-
   _RefreshIndState createState() => _RefreshIndState();
 }
 
-class _RefreshIndState extends State<_RefreshInd> {
+class _RefreshIndState extends State<RefreshList> {
 
   List<String> items = List();
   final _scrollV = ScrollController();
@@ -41,11 +20,7 @@ class _RefreshIndState extends State<_RefreshInd> {
 
   @override void initState() {
     super.initState();
-    _scrollV.addListener(() {
-      if (_scrollV.offset == _scrollV.position.maxScrollExtent && _scrollV.position.maxScrollExtent != 0.0) {
-        loadMore();
-      }
-    });
+    _scrollV.addListener(block());
   }
 
   @override void dispose() {
@@ -71,17 +46,12 @@ class _RefreshIndState extends State<_RefreshInd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _scrollV.animateTo(
-              0,
-              curve: Curves.easeOut,
-              duration: const Duration(milliseconds: 300),
-            ),
-        child: Icon(Icons.arrow_upward, color: Colors.white),
+      appBar: AppBar(
+        title: Text('RefreshList'),
       ),
-       body:Stack(
-         alignment: Alignment.center,
-         children: <Widget>[
+      body:Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
           RefreshIndicator(
             onRefresh: dataInit,
             child: ListView.builder(
@@ -100,9 +70,16 @@ class _RefreshIndState extends State<_RefreshInd> {
             backgroundColor: Colors.black,
             valueColor: AlwaysStoppedAnimation(Colors.red),
           )
-         ],
-       ),
-       
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _scrollV.animateTo(
+              0,
+              curve: Curves.easeOut,
+              duration: const Duration(milliseconds: 300),
+            ),
+        child: Icon(Icons.arrow_upward, color: Colors.white),
+      ),
     );
   }
 }

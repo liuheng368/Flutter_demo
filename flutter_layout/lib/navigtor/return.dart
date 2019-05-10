@@ -1,25 +1,4 @@
 import 'package:flutter/material.dart';
- 
-void main() => runApp(MyApp());
- 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'List Todo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Center(
-            child: ListTodo(),
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 class _ListTodoModel {
   final int todoIndex;
@@ -28,7 +7,7 @@ class _ListTodoModel {
   _ListTodoModel(@required this.todoIndex,@required this.todoDes);
 }
 
-class ListTodo extends StatelessWidget {
+class ListReturn extends StatelessWidget {
 
   final lm = List.generate(
     20, 

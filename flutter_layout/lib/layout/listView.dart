@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
- 
-void main() => runApp(ListViewDemo());
- 
+  
 class ListViewDemo extends StatelessWidget {
 
   List<Widget> getListItem() {
@@ -16,19 +14,16 @@ class ListViewDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
-          title: Text('Material App Bar'),
+          title: Text('ListViewDemo'),
         ),
         body: Center(
           child: ListView(
             children: getListItem(),
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
