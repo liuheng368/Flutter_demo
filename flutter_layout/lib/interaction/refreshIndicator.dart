@@ -65,11 +65,11 @@ class _RefreshIndState extends State<RefreshList> {
               },
             ),
           ),
-          CircularProgressIndicator(
-            value: 0.75,
-            backgroundColor: Colors.black,
-            valueColor: AlwaysStoppedAnimation(Colors.red),
-          )
+          // CircularProgressIndicator(
+          //   value: 0.75,
+          //   backgroundColor: Colors.black,
+          //   valueColor: AlwaysStoppedAnimation(Colors.red),
+          // )
         ],
       ),
       floatingActionButton: FloatingActionButton(

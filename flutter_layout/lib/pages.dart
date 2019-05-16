@@ -11,3 +11,6 @@ export 'navigtor/bash.dart';
 export 'navigtor/nested.dart';
 export 'navigtor/return.dart';
 export 'navigtor/todo.dart';
+
+
+export './components/myDrawer.dart';
