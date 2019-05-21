@@ -14,3 +14,5 @@ export 'navigtor/todo.dart';
 
 
 export './components/myDrawer.dart';
+export './components/bottomDrawer.dart';
+export './components/rawGestureDetector.dart';

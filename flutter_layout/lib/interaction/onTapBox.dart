@@ -78,7 +78,7 @@ class _boxB extends StatelessWidget {
   final bool active;
   final ValueChanged onTap;
 
-  const _boxB({Key key, this.active:false, @required this.onTap}) : super(key: key);
+ _boxB({Key key, this.active:false, @required this.onTap}) : super(key: key){print('dsdadadad');}
 
   @override
   Widget build(BuildContext context) {

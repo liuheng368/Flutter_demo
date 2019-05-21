@@ -81,6 +81,17 @@ static final _dataSource = [
         },
       ],
     },
+    {
+      'title': 'Components',
+      'isUnfold': false,
+      'items': [
+        {
+          'title': 'BottomDrawer',
+          'isSelected': false,
+          'pageBuilder': (BuildContext context) => RawGestureDetectorDemo(),
+        },
+      ],
+    }
   ];
 
   void _restData() {
@@ -143,7 +154,7 @@ static final _dataSource = [
       height: 44,
       child: Text('Home' ,
         textAlign: TextAlign.left, 
-        style: TextStyle(color: Colors.black87, fontSize: 18)
+        style: TextStyle(color: Colors.black87, fontSize: 18),
       ),
     );
   }
@@ -157,7 +168,7 @@ static final _dataSource = [
        child: Drawer(
          elevation: 20,
          child: ListView(
-          //  padding: EdgeInsets.zero,
+           padding: EdgeInsets.zero,
            children: <Widget>[
             getHeader(context),
             getTitle(),

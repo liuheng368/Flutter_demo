@@ -46,7 +46,15 @@ class ListViewItem extends StatelessWidget {
         ),
       ),
       onTap: (){
-        print(model.title);
+        showDialog(
+          context: context,
+          builder: (context){
+            print(model.title);
+            return AlertDialog(title:
+              Text('${model.title as String}',
+                  textAlign: TextAlign.center));
+          }
+        );
       },
     );
   }
